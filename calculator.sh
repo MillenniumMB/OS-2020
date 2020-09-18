@@ -9,5 +9,5 @@ elif [[ $1 = "mul" ]] ; then
 elif [[ $1 = "div" ]] ; then
       echo $(($2 / $3))
 else
-       echo -e "No such command for calculator\nUse sum/sub/mul/div" >&2
+       echo -e "No such command" >&2
 fi
