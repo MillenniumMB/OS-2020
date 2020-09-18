@@ -1,4 +1,4 @@
-  
+#!bin/bash
 function calculator {
         if [[ $2 =~ "^[0-9]+([.][0-9]+)?$" ]] ; then
             echo "3 parameter is not a number" >&2
