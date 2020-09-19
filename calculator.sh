@@ -1,13 +1,5 @@
-#!bin/bash
-
-if [[ $1 = "sum" ]] ; then
-     echo $(($2 + $3))
-elif [[ $1 = "sub" ]] ; then
-     echo $(($2 - $3))
-elif [[ $1 = "mul" ]] ; then
-        echo $(($2 * $3))
-elif [[ $1 = "div" ]] ; then
-      echo $(($2 / $3))
-else
-       echo -e "No such command" >&2
-fi
+#!/bin/bash
+var1=$(( 5 + 5 ))
+echo $var1
+var2=$(( $var1 * 2 ))
+echo $var2
