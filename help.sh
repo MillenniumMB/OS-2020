@@ -1,17 +1,18 @@
 function help {
 case $1 in
-"calc") echo ""
+"calc" ) echo ""
 ;;
-"search") echo ""
+"search" ) echo ""
 ;;
-"reverse") echo ""
+"reverse" ) echo ""
 ;;
-"strlen") echo ""
+"strlen" ) echo ""
 ;;
-"log") echo ""
+"log" ) echo ""
 ;;
-"exit") echo ""
+"exit" ) echo ""
 ;;
-"interactive") echo ""
+"interactive" ) echo ""
 ;;
+esac
 }
