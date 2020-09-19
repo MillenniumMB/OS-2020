@@ -7,7 +7,7 @@ if [[ -z $1 ]]
 elif [[ -n $2 ]]
   then
     echo "incorrect number of arguments"
-elif ! [[ $yournumber =~ $re ]]
+elif ! [[ $1 =~ $re ]]
   then
    echo "error: Not a number" >&2;
    exit 1
