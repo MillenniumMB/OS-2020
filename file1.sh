@@ -19,6 +19,8 @@ case $1 in
 ;;
 "exit" )
   echo ""
+  . ./exit.sh
+            exit $2
 ;;
 "help" )
   echo ""
