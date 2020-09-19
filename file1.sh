@@ -6,21 +6,21 @@ case $1 in
             calculator $2 $3 $4
 ;;
 "search" )
-echo ""
+  echo ""
 ;;
 "reverse" )
-echo ""
+  echo ""
 ;;
 "strlen" )
-echo ""
+  echo ""
 ;;
 "log" )
-echo ""
+  echo ""
 ;;
 "exit" )
-echo ""
+  echo ""
 ;;
 "interactive" )
-echo ""
+  echo ""
 ;;
 esac
