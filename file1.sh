@@ -20,6 +20,11 @@ case $1 in
 "exit" )
   echo ""
 ;;
+"help" )
+  echo ""
+  . ./help.sh
+            help $2
+;;
 "interactive" )
   echo ""
 ;;
