@@ -1,4 +1,3 @@
-#!/bin/bash
 function calculator {
         case $1 in
         "sum" )
@@ -18,4 +17,3 @@ function calculator {
         ;;
         esac
 }
-calculator
