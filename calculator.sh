@@ -1,16 +1,16 @@
-function calculator {
-        case $1 in
+function calc {
+        case $2 in
         "sum" )
-            echo $(($2 + $3))
+            echo $(($3 + $4))
         ;;
         "sub" )
-            echo $(($2 - $3))
+            echo $(($3 - $4))
         ;;
         "mul" )
-            echo $(($2 * $3))
+            echo $(($3 * $4))
         ;;
         "div" )
-            echo $(($2 / $3))
+            echo $(($3 / $4))
         ;;
         * )
             echo -e "you should only use these arguments\nUse sum/sub/mul/div" >&2
