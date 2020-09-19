@@ -13,7 +13,7 @@ function calculator {
             echo $(($2 / $3))
         ;;
         * )
-            echo -e "No such command for calculator\nUse sum/sub/mul/div" >&2
+            echo -e "you should only use these arguments\nUse sum/sub/mul/div" >&2
         ;;
         esac
 }
