@@ -5,3 +5,4 @@ var2=$1
 if [ $1 -gt 7 ]
   then echo $var2
 fi
+echo "Ok"
