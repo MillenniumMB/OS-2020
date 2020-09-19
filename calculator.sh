@@ -1,8 +1,10 @@
 #!/bin/bash
-var1=$(( 5 + 5 ))
-echo $var1
-var2=$1
-if [ $1 -gt 7 ]
-  then echo $var2
+mydir=/home/likegeeks
+if [ -d $mydir ]
+then
+echo "The $mydir directory exists"
+cd $ mydir
+ls
+else
+echo "The $mydir directory does not exist"
 fi
-echo "Ok"
