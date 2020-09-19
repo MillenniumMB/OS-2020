@@ -1,5 +1,4 @@
 #!/bin/bash
-  
 function calculator {
         case $1 in
         "sum" )
