@@ -1,4 +1,4 @@
-function exit {
+function exit_ {
 re='^[+-]?[0-256]+$'
 if [[ -z $1 ]]
   then
