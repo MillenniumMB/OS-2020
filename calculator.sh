@@ -1,7 +1,7 @@
 #!/bin/bash
-function calculator {
+function calculator{
 if [[ $1 = "sum" ]]
-then 
+then
   echo "AAA"
 }
 calculator
