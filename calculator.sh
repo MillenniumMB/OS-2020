@@ -7,4 +7,4 @@ cd $ mydir
 ls
 else
 echo "The $mydir directory does not exist" 
-fi ;
+fi 
