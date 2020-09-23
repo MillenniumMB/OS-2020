@@ -1,8 +1,8 @@
 function search {
-  if [[ -r $1 ]]
+  if [[ -z $1 ]]
   then echo "\033[31mincorrect number of arguments\033[0m"
     exit 1
-  elif [[ -r $2 ]]
+  elif [[ -z $2 ]]
   then echo "\033[31mincorrect number of arguments\033[0m"
     exit 1
   fi
