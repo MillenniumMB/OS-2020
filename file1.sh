@@ -8,7 +8,6 @@ if ! [[ -e $1.sh ]] ; then
             exit 
 fi
 }
-Error_File
 case $1 in
 "calc" )
 if ! [[ -z $5 ]]
