@@ -2,6 +2,13 @@
 function Mat_Error {
     exit -1
 }
+function Error_File {
+if ! [[ -e $1.sh ]] ; then
+            echo -e "\033[31mCan't find file"\033[0m"
+            exit 
+fi
+}
+Error_File
 case $1 in
 "calc" )
 if ! [[ -z $5 ]]
@@ -68,6 +75,12 @@ if ! [[ -z $3 ]]
             help $2
 ;;
 "interactive" )
+if ! [[ -z $2 ]]
+    then echo -e "\033[31mincorrect number of arguments\033[0m"
+    exit 1
+  fi
   echo ""
+  . ./interactive.sh
+            interactive
 ;;
 esac
