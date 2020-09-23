@@ -3,9 +3,9 @@ function Mat_Error {
     exit -1
 }
 function Error_File {
-if ! [[ -e $1.sh ]] ; then
-            echo -e "\033[31mCan't find file"\033[0m"
-            exit 
+if ! [[ -e $1.sh ]]
+    then echo -e "\033[31mCan't find file"\033[0m"
+        exit 1 
 fi
 }
 case $1 in
