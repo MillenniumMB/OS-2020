@@ -7,6 +7,6 @@ function strlen {
     exit 1
   fi
   VAR1 = "$1"
-  echo VAR1
+  echo $VAR1
   echo ${#VAR1}
 }
