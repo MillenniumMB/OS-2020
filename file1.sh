@@ -1,7 +1,7 @@
 #!/bin/bash
 case $1 in
 "calc" )
-elif ! [[ -z $5 ]]
+if ! [[ -z $5 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   fi
@@ -10,7 +10,7 @@ elif ! [[ -z $5 ]]
             calc $2 $3 $4
 ;;
 "search" )
-elif ! [[ -z $4 ]]
+if ! [[ -z $4 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   fi
@@ -19,7 +19,7 @@ elif ! [[ -z $4 ]]
             search $2 $3
 ;;
 "reverse" )
-elif ! [[ -z $4 ]]
+if ! [[ -z $4 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   fi
@@ -28,7 +28,7 @@ elif ! [[ -z $4 ]]
             reverse $2 $3
 ;;
 "strlen" )
-elif ! [[ -z $3 ]]
+if ! [[ -z $3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   fi
@@ -40,7 +40,7 @@ elif ! [[ -z $3 ]]
   echo ""
 ;;
 "exit" )
-elif ! [[ -z $3 ]]
+if ! [[ -z $3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   fi
@@ -49,7 +49,7 @@ elif ! [[ -z $3 ]]
             exit_ $2
 ;;
 "help" )
-elif ! [[ -z $3 ]]
+if ! [[ -z $3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   fi
