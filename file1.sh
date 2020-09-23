@@ -90,4 +90,9 @@ if ! [[ -z $2 ]]
   . ./interactive.sh
             interactive
 ;;
+* )
+  echo ""
+  . ./help.sh
+            help "all"
+;;
 esac
