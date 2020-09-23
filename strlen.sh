@@ -6,6 +6,6 @@ function strlen {
     then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   fi
-  $ VAR1 = "$1"
-  $ echo ${#VAR1}
+  VAR="$1"
+  echo ${#VAR}
 }
