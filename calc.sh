@@ -26,7 +26,7 @@ function calc {
             echo $(($2 / $3))
         ;;
         * )
-            echo -e "you should only use these arguments\nUse sum/sub/mul/div" >
+            echo -e "you should only use these arguments\nUse sum/sub/mul/div"
         ;;
         esac
 }
