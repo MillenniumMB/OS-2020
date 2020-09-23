@@ -2,19 +2,20 @@
 function Mat_Error {
     exit -1
 }
-function checkFile_int {
+function Error_File {
   if ! [[ -e $1.sh ]]
   then
-    echo -e "\033[31mОшибка - нет файла $1.sh"
+    echo -e "\033[31mError not file $1.sh\033[0m"
     return -1
   fi
   if ! [[ -r $1.sh ]]
   then
-    echo -e "\033[31mОшибка - недостаточно прав для запуска $1.sh"
+    echo -e "\033[31mError insufficient rights $1.sh\033[0m"
     return -2
   fi
   return 0
 }
+Error_File
 case $1 in
 "calc" )
 if ! [[ -z $5 ]]
