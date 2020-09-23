@@ -2,7 +2,7 @@
 case $1 in
 "calc" )
   echo ""
-  . ./calculator.sh
+  . ./calc.sh
             calc $2 $3 $4
 ;;
 "search" )
