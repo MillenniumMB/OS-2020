@@ -1,4 +1,7 @@
 #!/bin/bash
+function Mat_Error {
+    exit -1
+}
 case $1 in
 "calc" )
 if ! [[ -z $5 ]]
