@@ -21,7 +21,7 @@ function calc {
         if [[ $4 -eq 0 || $4 -eq -0 || $4 -eq +0 ]]
         then
         echo -e "\033[31mError division by zero\033[0m"
-        exit 1
+        Mat_Error
         fi
             echo $(($2 / $3))
         ;;
