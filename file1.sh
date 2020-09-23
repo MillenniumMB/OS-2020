@@ -18,7 +18,7 @@ case $1 in
 "strlen" )
   echo ""
   . ./strlen.sh
-            strlen $2
+            strlen $2 $3
 ;;
 "log" )
   echo ""
