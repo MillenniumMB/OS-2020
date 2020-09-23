@@ -7,6 +7,8 @@ case $1 in
 ;;
 "search" )
   echo ""
+  . ./search.sh
+            search $2 $3
 ;;
 "reverse" )
   echo ""
