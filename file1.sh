@@ -15,7 +15,7 @@ function Error_File {
   fi
   return 0
 }
-Error_File
+Error_File $1
 case $1 in
 "calc" )
 if ! [[ -z $5 ]]
