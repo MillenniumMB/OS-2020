@@ -6,13 +6,13 @@ function reverse {
     then echo -e "\033[31you can't use this file\033[0m"
     exit 1
   elif [[ -d $1 || -d $2 ]]
-    then echo -e "\033[31mError:it is directory\033[0m"
+    then echo -e "\033[31merror:it is directory\033[0m"
       exit 1
   elif ! [[ -f $1 ]]
     then echo -e "\033[31file not found\033[0m"
   fi
   if ! [[ -f $2 ]]
-    then sudo chmod +x $2
+    then touch $2
   fi
   tac $1 | rev > $2
 }
