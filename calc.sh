@@ -3,7 +3,8 @@ function calc {
   then echo -e "\033[31mincorrect number of arguments\033[0m"
   exit 1
   elif ! [[ $2 =~ '^-?[0-256]+$' && $3 =~ '^-?[0-256]+$' ]]
-  then echo -e "\033[31you must enter 2 numbers after sum/sub/mul/div\033[0m"
+  then
+  echo -e "\033[31myou must enter 2 numbers after div/sum/mul/div\033[0m"
   exit 1
   fi
     case $1 in
