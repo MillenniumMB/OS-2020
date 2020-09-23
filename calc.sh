@@ -18,10 +18,15 @@ function calc {
             echo $(($2 * $3))
         ;;
         "div" )
+        if [[ $4 -eq 0 || $4 -eq -0 || $4 -eq +0 ]]
+        then
+        echo -e "\033[31mError division by zero\033[0m"
+        exit 1
+        fi
             echo $(($2 / $3))
         ;;
         * )
-            echo -e "you should only use these arguments\nUse sum/sub/mul/div" >&2
+            echo -e "you should only use these arguments\nUse sum/sub/mul/div" >
         ;;
         esac
 }
