@@ -1,13 +1,13 @@
 function search {
   if [[ -z $1 ]]
-  then echo "\033[31mincorrect number of arguments\033[0m"
+  then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   elif [[ -z $2 ]]
-  then echo "\033[31mincorrect number of arguments\033[0m"
+  then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   fi
    if ! [[ -d $1 ]] ; then
-     echo "\033[31mError:not faind dirrectory not found\033[0m"
+     echo -e "\033[31mError:not faind dirrectory not found\033[0m"
       exit 1
    elif ! [[ -r $1 ]]
     then
