@@ -1,3 +1,4 @@
+function calc {
 if ![[ $2 =~ '^[+-]?[0-256]+$' && $3 =~ '^[+-]?[0-256]+$' ]] then
         echo "invalid argument"
         exit 1
