@@ -17,6 +17,8 @@ case $1 in
 ;;
 "strlen" )
   echo ""
+  . ./strlen.sh
+            strlen $2
 ;;
 "log" )
   echo ""
