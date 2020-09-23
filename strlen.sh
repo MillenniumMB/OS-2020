@@ -6,6 +6,6 @@ function strlen {
     then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   fi
-  length_str = $1 
-  echo ${#length_str}
+  forlen = "$1" 
+  echo ${#forlen}
 }
