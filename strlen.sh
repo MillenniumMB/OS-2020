@@ -7,5 +7,5 @@ function strlen {
     exit 1
   fi
   VAR="$1"
-  echo ${#VAR}
+  echo -e "Len: "${#VAR}
 }
