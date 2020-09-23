@@ -1,5 +1,5 @@
 function exit_ {
-re='^[+-]?[0-256]+$'
+re='^[+-]?[0-9]+$'
 if [[ -z $1 ]]
   then
     echo "0"
