@@ -1,4 +1,8 @@
 function calc {
+    if [[ -z $1 ]]
+  then echo -e "\033[31mincorrect number of arguments\033[0m"
+  exit 1
+  fi
     case $1 in
     "sum" )
             echo $(($2 + $3))
