@@ -12,7 +12,7 @@ function reverse {
     then echo -e "\033[31file not found\033[0m"
   fi
   if ! [[ -f $2 ]]
-    then sudo chmod +x "$2"
+    then sudo chmod +x $2
   fi
   tac $1 | rev > $2
 }
