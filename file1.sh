@@ -12,6 +12,8 @@ case $1 in
 ;;
 "reverse" )
   echo ""
+  . ./reverse.sh
+            reverse $2 $3
 ;;
 "strlen" )
   echo ""
