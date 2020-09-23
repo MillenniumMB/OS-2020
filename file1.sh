@@ -37,7 +37,14 @@ if ! [[ -z $3 ]]
             strlen $2
 ;;
 "log" )
+  if ! [[ -z $2 ]]
+    then echo -e "\033[31mincorrect number of arguments\033[0m"
+    exit 1
+  fi
   echo ""
+  . ./log.sh
+            log
+  
 ;;
 "exit" )
 if ! [[ -z $3 ]]
