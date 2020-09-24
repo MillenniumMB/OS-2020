@@ -3,11 +3,17 @@ function Error_File {
   if ! [[ -e $1.sh ]]
   then
     echo -e "\033[31mError not file $1.sh\033[0m"
+     Error_File "help"
+      . ./help.sh
+            help
     exit -2
   fi
   if ! [[ -r $1.sh ]]
   then
     echo -e "\033[31mError insufficient rights $1.sh\033[0m"
+     Error_File "help"
+      . ./help.sh
+            help
     exit -2
   fi
   return 0
