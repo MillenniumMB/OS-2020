@@ -14,10 +14,10 @@ if ! [[ -e $1.sh ]]
 function interactive {
 case $1 in
 "a")
-File_Error "calc"
+File_Error "cal"
 . ./calc.sh
 
-            calc
+            calc sum 4 5
 ;;"b")
 . ./search.sh
             search
