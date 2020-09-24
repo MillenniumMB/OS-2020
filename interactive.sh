@@ -16,6 +16,7 @@ while true
 functuon interactive {
 case $1 in
 "f")
+echo $1
 . ./exit.sh
             exit_ 0
             exit 0
