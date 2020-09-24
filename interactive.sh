@@ -1,8 +1,46 @@
+function File_Error {
+if ! [[ -e $1.sh ]]
+  then
+    echo -e "\033[31mError not file $1.sh\033[0m"
+    return -1
+  fi
+  if ! [[ -r $1.sh ]]
+  then
+    echo -e "\033[31mError insufficient rights $1.sh\033[0m"
+    return -2
+  fi
+  return 0
+}
 function interactive {
 case $1 in
+"a")
+File_Error "calc"
+. ./calc.sh
+
+            calc
+;;"b")
+. ./search.sh
+            search
+;;
+"c")
+. ./reverse.sh
+            reverse
+;;
+"d")
+. ./strlen.sh
+            strlen
+;;
+"e")
+. ./log.sh
+            log
+;;
 "f")
 . ./exit.sh
-            exit_ 0
+            exit_
+;;
+"g")
+. ./help.sh
+            help
 ;;
 esac
 return 0
