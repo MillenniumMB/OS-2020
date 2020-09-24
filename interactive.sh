@@ -17,7 +17,7 @@ functuon interactive {
 case $1 in
 "f")
 . ./exit.sh
-            exit_
+            exit_ 0
 ;;
 esac
 }
