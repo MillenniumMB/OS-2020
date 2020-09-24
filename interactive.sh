@@ -29,7 +29,7 @@ case $1 in
     calc $command $number1 $number2 "interactive"
 ;;"b")
   File_Error "search"
-  echo -e "Write a file"
+  echo -e "Write a directory"
   read file1
   echo -e "Write a key"
   read key
