@@ -23,4 +23,5 @@ while true
         echo $VAR
         interactive $VAR
     done
+      return 0
 }
