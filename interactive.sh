@@ -18,6 +18,7 @@ case $1 in
 "f")
 . ./exit.sh
             exit_ 0
+            exit 0
 ;;
 esac
 }
