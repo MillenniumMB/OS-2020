@@ -22,10 +22,10 @@ function calc {
         ;;
         "div" )
         if [[ $3 -eq 0 || $3 -eq -0 || $3 -eq +0 ]]
-        then
-        echo -e "\033[31mError division by zero\033[0m"
+        then echo -e "\033[31mError division by zero\033[0m"
         if [[ "$4" = "interactive" ]]
-            then return -1
+            then 
+            return -1
         else
             exit -1
         fi
