@@ -11,7 +11,11 @@ elif [[ -n $2 ]] && ! [[ "$2" = "interactive" ]]
 elif ! [[ $1 =~ $re ]]
   then
    echo -e "\033[31merror: Not a number\033[0m"
-   exit -4
+   if [[ "$2" = "interactive" ]]
+        then return -4
+    else
+        exit -4
+    fi
 else
   exit $1
 fi
