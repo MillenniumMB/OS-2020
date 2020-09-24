@@ -2,7 +2,7 @@
 function Error_File {
   if ! [[ -e $1.sh ]]
   then
-    echo -e "\033[31mError not file $1.sh\033[0m"
+    echo -e "\033[31mError not file $1.sh\033[0m" >$2
      Error_File "help"
       . ./help.sh
             help
@@ -10,7 +10,7 @@ function Error_File {
   fi
   if ! [[ -r $1.sh ]]
   then
-    echo -e "\033[31mError insufficient rights $1.sh\033[0m"
+    echo -e "\033[31mError insufficient rights $1.sh\033[0m" >$2
      Error_File "help"
       . ./help.sh
             help
@@ -22,7 +22,7 @@ Error_File $1
 case $1 in
 "calc" )
 if ! [[ -z $5 ]]
-    then echo -e "\033[31mincorrect number of arguments\033[0m"
+    then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
   echo ""
@@ -31,7 +31,7 @@ if ! [[ -z $5 ]]
 ;;
 "search" )
 if ! [[ -z $4 ]]
-    then echo -e "\033[31mincorrect number of arguments\033[0m"
+    then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
   echo ""
@@ -49,7 +49,7 @@ if ! [[ -z $4 ]]
 ;;
 "strlen" )
 if ! [[ -z $3 ]]
-    then echo -e "\033[31mincorrect number of arguments\033[0m"
+    then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
   echo ""
@@ -58,7 +58,7 @@ if ! [[ -z $3 ]]
 ;;
 "log" )
   if ! [[ -z $2 ]]
-    then echo -e "\033[31mincorrect number of arguments\033[0m"
+    then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
   echo ""
@@ -68,7 +68,7 @@ if ! [[ -z $3 ]]
 ;;
 "exit" )
 if ! [[ -z $3 ]]
-    then echo -e "\033[31mincorrect number of arguments\033[0m"
+    then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
   echo ""
@@ -77,7 +77,7 @@ if ! [[ -z $3 ]]
 ;;
 "help" )
 if ! [[ -z $3 ]]
-    then echo -e "\033[31mincorrect number of arguments\033[0m"
+    then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
   echo ""
@@ -86,7 +86,7 @@ if ! [[ -z $3 ]]
 ;;
 "interactive" )
 if ! [[ -z $2 ]]
-    then echo -e "\033[31mincorrect number of arguments\033[0m"
+    then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
   echo ""
