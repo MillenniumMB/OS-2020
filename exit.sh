@@ -6,11 +6,12 @@ if [[ -z $1 ]]
     exit 0
 elif [[ -n $2 ]] && ! [[ "$2" = "interactive" ]]
   then
-    echo "incorrect number of arguments"
+    echo -e "\033[31mincorrect number of arguments\033[0m"
+    exit -3
 elif ! [[ $1 =~ $re ]]
   then
-   echo "error: Not a number" >&2;
-   exit 1
+   echo -e "\033[31merror: Not a number\033[0m"
+   exit -4
 else
   exit $1
 fi
