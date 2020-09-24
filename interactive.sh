@@ -9,6 +9,7 @@ while true
                 f: exit
                 g: help\033[0m"
         read VAR
+        echo $VAR
         interactive $VAR
     done
 }
