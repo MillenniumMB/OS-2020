@@ -91,6 +91,6 @@ if ! [[ -z $2 ]]
   echo ""
   Error_File "help"
   . ./help.sh
-            help "all"
+            help
 ;;
 esac
