@@ -1,6 +1,6 @@
 function help {
  if [[ -n $2 ]] && ! [[ "$2" = "interactiv" ]]
-    then echo -e "\033[31mincorrect number of arguments\033[0m"
+    then echo -e "\033[31mincorrect number of arguments\033[0m" >&2
   exit -3
   fi
 case $1 in
