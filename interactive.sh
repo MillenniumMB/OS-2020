@@ -8,6 +8,7 @@ echo $1
             exit 0
 ;;
 esac
+return 0
 }
 functuon Back_To_Menu {
 while true
