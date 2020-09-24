@@ -18,7 +18,7 @@ if ! [[ -e $1.sh ]]
 function interactive {
 case $1 in
 "a")
-  File_Error "cal"
+  File_Error "calc"
   echo -e "Write the sum command sum/sub/mul/div"
   read command
   echo -e "Write the first number"
@@ -28,34 +28,48 @@ case $1 in
   . ./calc.sh
     calc $command $number1 $number2 "interactive"
 ;;"b")
-File_Error "search"
-. ./search.sh
-            search
+  File_Error "search"
+  echo -e "Write a file"
+  read file1
+  echo -e "Write a key"
+  read key
+  . ./search.sh
+            search $file1 $key "interactive"
 ;;
 "c")
-File_Error "reverse"
+  File_Error "reverse"
+  echo -e "Write a first file"
+  read file1
+  echo -e "Write a second file"
+  read file2
 . ./reverse.sh
-            reverse
+            reverse $file1 $file2 "interactive"
 ;;
 "d")
-File_Error "strlen"
-. ./strlen.sh
-            strlen
+  File_Error "strlen"
+  echo -e "Write a string"
+  read string
+  . ./strlen.sh
+            strlen $string "interactive"
 ;;
 "e")
-File_Error "log"
-. ./log.sh
-            log
+  File_Error "log"
+  . ./log.sh
+            log "interactive"
 ;;
 "f")
-File_Error "exit"
-. ./exit.sh
-            exit_
+  File_Error "exit"
+  echo -e "enter the completion code"
+  read code
+  . ./exit.sh
+            exit_ $code "interactive"
 ;;
 "g")
-File_Error "help"
-. ./help.sh
-            help
+  File_Error "help"
+  echo -e "enter one of the commands to learn more"
+  read key
+  . ./help.sh
+            help $key "interactive"
 ;;
 esac
 return 0
