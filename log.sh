@@ -4,7 +4,7 @@ function log {
     exit -3
   elif ! [[ -r "/var/log/anaconda/X.log" ]]
     then
-      echo -e "\033[31mYou will not be able to open this diretoria $1\033[0m" > &2
+      echo -e "\033[31mYou will not be able to open this diretoria $1\033[0m" >&2
       if [[ "$1" = "interactive" ]]
         then return -2
       else
