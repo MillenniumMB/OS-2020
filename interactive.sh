@@ -2,14 +2,14 @@ function File_Error {
 if ! [[ -e $1.sh ]]
   then
     echo -e "\033[31mError not file $1.sh
-    you can't use this function\033[0m"
+    you can't use this function\033[0m" >&2
     Back_To_Menu
     return -2
   fi
   if ! [[ -r $1.sh ]]
   then
     echo -e "\033[31mError insufficient rights $1.sh
-    you can't use this function\033[0m"
+    you can't use this function\033[0m" >&2
     Back_To_Menu
     return -2
   fi
