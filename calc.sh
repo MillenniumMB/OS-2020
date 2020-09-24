@@ -1,5 +1,5 @@
 function calc {
-    if [[ -z $1 || -z $2 || -r $3 ]]
+    if [[ -z $1 || -z $2 || -r $3 ]] && ! [[ "$3" = "interactive" ]]
   then echo -e "\033[31mincorrect number of arguments\033[0m"
   exit 1
   elif ! [[ $2 =~ ^[+-]?[0-9]+$ && $3 =~ ^[+-]?[0-9]+$ ]]
