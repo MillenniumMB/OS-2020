@@ -1,4 +1,8 @@
 function help {
+ if [[ -n $2 ]] && ! [[ "$2" = "interactive" ]]
+    then echo -e "\033[31mincorrect number of arguments\033[0m"
+  exit -3
+  fi
 case $1 in
 "calc" )
   echo "the calculator function accepts 3 arguments as input: 1 (sum/sub/mul/div) which corresponds to (+ / - / * / /), 2 the remaining arguments are integers"
@@ -21,6 +25,12 @@ case $1 in
 "interactive" )
   echo "you can switch to interactive mode. Enter an interactive to do this"
 ;;
+"exit code")
+  echo " -1: mathematical error
+  -2: file error
+  -3: incorrect number of arguments
+  -4: type mismatch"
+;;
 *)
   echo "calc: the calculator function accepts 3 arguments as input: 1 (sum/sub/mul/div) which corresponds to (+ / - / * / /), 2 the remaining arguments are integers"
   echo "search: enter the name of the directory and the key to search the entire directory"
@@ -29,6 +39,7 @@ case $1 in
   echo "log: enter log to display all errors and information messages in the X. log file"
   echo "exit: terminate the application with a return code of 2 arguments"
   echo "interactive: you can switch to interactive mode. Enter an interactive to do this"
+  echo "exit code: output error output instructions"
   ;;
 esac
 }
