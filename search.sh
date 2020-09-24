@@ -1,8 +1,5 @@
 function search {
-  if [[ -z $1  || -n $3]] && ! [[ "$3" = "interactive" ]]
-  then echo -e "\033[31mincorrect number of arguments\033[0m"
-    exit -3
-  elif [[ -z $2 ]]
+  if [[ -z $1 || -z $2 || -n $3 ]] && ! [[ "$3" = "interactive" ]]
   then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit -3
   fi
