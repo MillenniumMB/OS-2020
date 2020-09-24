@@ -69,7 +69,7 @@ case $1 in
   echo -e "enter one of the commands to learn more"
   read key
   . ./help.sh
-            help $key "interactive"
+            help $key "interactiv"
 ;;
 esac
 return 0
