@@ -10,6 +10,7 @@ function log {
       else
         exit -2
       fi
+  fi   
   while read line
     do
     if [[ "$line" = *"(WW)"* && "$line" != *"(WW) warning, (EE) error, (NI) not implemented, (??) unknown."* ]]
