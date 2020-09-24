@@ -3,7 +3,7 @@ if ! [[ -e $1.sh ]]
   then
     echo -e "\033[31mError not file $1.sh
     you can't use this function\033[0m"
-    return -1
+    return -2
   fi
   if ! [[ -r $1.sh ]]
   then
@@ -16,7 +16,9 @@ if ! [[ -e $1.sh ]]
 function interactive {
 case $1 in
 "a")
-  File_Error "cal"
+  if [[ File_Error "cal" -eq -2 ]]
+    then return -2
+  fi
   echo -e "Write the sum command sum/sub/mul/div"
   read command
   echo -e "Write the first number"
