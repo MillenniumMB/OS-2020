@@ -1,4 +1,4 @@
-functuon interactive {
+function interactive {
 echo $1
 case $1 in
 "f")
@@ -10,7 +10,7 @@ echo $1
 esac
 return 0
 }
-functuon Back_To_Menu {
+function Back_To_Menu {
 while true
   do echo -e "\033[94m  Enter one of the commands:
                 a: calculator
