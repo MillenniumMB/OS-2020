@@ -1,6 +1,5 @@
 function exit_ {
 re='^[+-]?[0-9]+$'
-echo $1
 if [[ -z $1 || "$1" = "interactive" ]]
   then
     echo "0"
