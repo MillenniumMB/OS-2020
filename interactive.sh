@@ -1,11 +1,8 @@
 function interactive {
-echo $1
 case $1 in
 "f")
-echo $1
 . ./exit.sh
             exit_ 0
-            exit 0
 ;;
 esac
 return 0
@@ -21,8 +18,6 @@ while true
                 f: exit
                 g: help\033[0m"
         read VAR
-        echo $VAR
         interactive $VAR
     done
-      return 0
 }
