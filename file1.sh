@@ -1,17 +1,14 @@
 #!/bin/bash
-function Mat_Error {
-    exit -1
-}
 function Error_File {
   if ! [[ -e $1.sh ]]
   then
     echo -e "\033[31mError not file $1.sh\033[0m"
-    return -1
+    exit -2
   fi
   if ! [[ -r $1.sh ]]
   then
     echo -e "\033[31mError insufficient rights $1.sh\033[0m"
-    return -2
+    exit -2
   fi
   return 0
 }
@@ -20,7 +17,7 @@ case $1 in
 "calc" )
 if ! [[ -z $5 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
-    exit 1
+    exit -3
   fi
   echo ""
   . ./calc.sh
@@ -29,7 +26,7 @@ if ! [[ -z $5 ]]
 "search" )
 if ! [[ -z $4 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
-    exit 1
+    exit -3
   fi
   echo ""
   . ./search.sh
@@ -38,7 +35,7 @@ if ! [[ -z $4 ]]
 "reverse" )
 if ! [[ -z $4 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
-    exit 1
+    exit -3
   fi
   echo ""
   . ./reverse.sh
@@ -47,7 +44,7 @@ if ! [[ -z $4 ]]
 "strlen" )
 if ! [[ -z $3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
-    exit 1
+    exit -3
   fi
   echo ""
   . ./strlen.sh
@@ -56,7 +53,7 @@ if ! [[ -z $3 ]]
 "log" )
   if ! [[ -z $2 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
-    exit 1
+    exit -3
   fi
   echo ""
   . ./log.sh
@@ -66,7 +63,7 @@ if ! [[ -z $3 ]]
 "exit" )
 if ! [[ -z $3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
-    exit 1
+    exit -3
   fi
   echo ""
   . ./exit.sh
@@ -75,7 +72,7 @@ if ! [[ -z $3 ]]
 "help" )
 if ! [[ -z $3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
-    exit 1
+    exit -3
   fi
   echo ""
   . ./help.sh
@@ -84,7 +81,7 @@ if ! [[ -z $3 ]]
 "interactive" )
 if ! [[ -z $2 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
-    exit 1
+    exit -3
   fi
   echo ""
   . ./interactive.sh
@@ -92,6 +89,7 @@ if ! [[ -z $2 ]]
 ;;
 * )
   echo ""
+  Error_File "help"
   . ./help.sh
             help "all"
 ;;
