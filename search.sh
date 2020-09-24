@@ -4,7 +4,7 @@ function search {
     exit -3
   fi
    if ! [[ -d $1 ]] ; then
-     echo -e "\033[31mError: dirrectory not found\033[0m" >&2
+     echo -e "\033[31mError: directory not found\033[0m" >&2
      if [[ "$3" = "interactive" ]]
         then return -2
      else
