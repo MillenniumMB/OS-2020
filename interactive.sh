@@ -15,6 +15,7 @@ while true
 }
 
 functuon interactive {
+echo $1
 case $1 in
 "f")
 echo $1
