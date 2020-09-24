@@ -16,16 +16,15 @@ if ! [[ -e $1.sh ]]
 function interactive {
 case $1 in
 "a")
-File_Error "calc"
-echo -e "Write the sum command sum/sub/mul/div"
-read command
-echo -e "Write the first number"
-read number1
-echo -e "Write the second number"
-read number2
-. ./calc.sh
-
-            calc $command $number1 $number2 "interactive"
+  File_Error "cal"
+  echo -e "Write the sum command sum/sub/mul/div"
+  read command
+  echo -e "Write the first number"
+  read number1
+  echo -e "Write the second number"
+  read number2
+  . ./calc.sh
+    calc $command $number1 $number2 "interactive"
 ;;"b")
 File_Error "search"
 . ./search.sh
