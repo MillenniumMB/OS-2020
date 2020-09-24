@@ -1,5 +1,5 @@
 function reverse {
-  if [[ -z $1 || -z $2 || -n $3]] && ! [[ "$3" = "interactive" ]]
+  if [[ -z $1 || -z $2 || -n $3 ]] && ! [[ "$3" = "interactive" ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m"
     exit 1
   elif ! [[ -r $1 || -r $2 ]]
