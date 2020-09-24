@@ -4,7 +4,7 @@ if [[ -z $1 ]]
   then
     echo "0"
     exit 0
-elif [[ -n $2 ]]
+elif [[ -n $2 ]] && ! [[ "$2" = "interactive" ]]
   then
     echo "incorrect number of arguments"
 elif ! [[ $1 =~ $re ]]
