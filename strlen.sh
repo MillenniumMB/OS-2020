@@ -8,5 +8,6 @@ function strlen {
     fi
   fi
   VAR="$1"
-  echo -e "Len: "${#VAR}
+  size=${#VAR}
+  echo -e "Len: $size"
 }
