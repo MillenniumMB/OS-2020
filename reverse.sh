@@ -24,10 +24,10 @@ function reverse {
         exit -2
     fi 
   fi
-  #if [[ -f $2 ]]
-  #echo "Hello"
-   # then touch $2
-  #fi
+  if ![[ -f $2 ]]
+  echo "Hello"
+    then touch $2
+  fi
     tac $1 >> a.txt
     rm $2
     rev a.txt >> $2
