@@ -29,6 +29,7 @@ function reverse {
    # then touch $2
   #fi
     tac $1 >> a.txt
+    rm $2
     rev a.txt >> $2
     
 }
