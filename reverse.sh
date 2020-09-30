@@ -27,6 +27,5 @@ function reverse {
   if ! [[ -f $2 ]]
     then touch $2
   fi
-  echo -n > $2
     tac $1 | rev > $2
 }
