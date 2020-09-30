@@ -24,7 +24,7 @@ function reverse {
         exit -2
     fi 
   fi
-  if ! [[ -f $2 ]]
+  if [[ -f $2 ]]
   echo "Hello"
     then touch $2
   fi
