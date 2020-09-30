@@ -27,5 +27,10 @@ function reverse {
   if ! [[ -f $2 ]]
     then touch $2
   fi
-    tac $1 | rev > $2
+  if [ "$1" == "$2" ]
+				then
+					rev $1 | tac >$1
+				else
+					rev $1 | tac >$2
+				fi
 }
