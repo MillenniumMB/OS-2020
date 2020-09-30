@@ -25,6 +25,7 @@ function reverse {
     fi 
   fi
   if ! [[ -f $2 ]]
+  echo "Hello"
     then touch $2
   fi
   if [ "$1" == "$2" ]
