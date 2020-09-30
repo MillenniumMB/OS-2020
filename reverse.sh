@@ -24,10 +24,10 @@ function reverse {
         exit -2
     fi 
   fi
-  if [[ -f $2 ]]
-  echo "Hello"
-    then touch $2
-  fi
+  #if [[ -f $2 ]]
+  #echo "Hello"
+   # then touch $2
+  #fi
   if [ "$1" == "$2" ]
 	then
 		rev $1 | tac >$1
