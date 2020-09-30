@@ -1,5 +1,5 @@
 function strlen {
-  VAR="$1"
+  VAR="$@"
   size=${#VAR}
   echo -e "Len: $size"
 }
