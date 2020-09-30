@@ -28,10 +28,7 @@ function reverse {
   #echo "Hello"
    # then touch $2
   #fi
-  if [ "$1" == "$2" ]
-	then
-		rev $1 | tac >$1
-	else
-		rev $1 | tac >$2
-	fi
+    tac $1 >> a.txt
+    rev a.txt >> $2
+    
 }
