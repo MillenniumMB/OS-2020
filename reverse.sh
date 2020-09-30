@@ -28,9 +28,9 @@ function reverse {
     then touch $2
   fi
   if [ "$1" == "$2" ]
-				then
-					rev $1 | tac >$1
-				else
-					rev $1 | tac >$2
-				fi
+	then
+		rev $1 | tac >$1
+	else
+		rev $1 | tac >$2
+	fi
 }
