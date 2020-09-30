@@ -2,7 +2,7 @@ function exit_ {
 re='^[+-]?[0-9]+$'
 if [[ -z $1 || "$1" = "interactive" ]]
   then
-    echo "0"
+    echo "exit 0"
     exit 0
 elif [[ -n $2 ]] && ! [[ "$2" = "interactive" ]]
   then
@@ -17,6 +17,7 @@ elif ! [[ $1 =~ $re ]]
         exit -4
     fi
 else
+  echo "exit $1"
   exit $1
 fi
 }
