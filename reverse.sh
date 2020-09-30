@@ -27,5 +27,8 @@ function reverse {
   if ! [[ -f $2 ]]
     then touch $2
   fi
-  tac $1 | rev > $2
+  echo -n > $2
+    tac $1 >> a.txt
+    rev a.txt >> $2
+    rm a.txt
 }
