@@ -25,7 +25,6 @@ if ! [[ -z $5 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
-  echo ""
   . ./calc.sh
             calc $2 $3 $4
 ;;
@@ -34,7 +33,6 @@ if ! [[ -z $4 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
-  echo ""
   . ./search.sh
             search $2 $3
 ;;
@@ -48,11 +46,11 @@ if ! [[ -z $4 ]]
             reverse $2 $3
 ;;
 "strlen" )
-if ! [[ -z $3 ]]
-    then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
-    exit -3
-  fi
-  echo ""
+#if ! [[ -z $3 ]]
+ #   then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
+  #  exit -3
+  #fi
+  
   . ./strlen.sh
             strlen $2
 ;;
@@ -61,7 +59,7 @@ if ! [[ -z $3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
-  echo ""
+
   . ./log.sh
             log
   
@@ -71,7 +69,7 @@ if ! [[ -z $3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
-  echo ""
+  
   . ./exit.sh
             exit_ $2
 ;;
@@ -80,7 +78,7 @@ if ! [[ -z $3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
-  echo ""
+ 
   . ./help.sh
             help $2
 ;;
@@ -89,12 +87,12 @@ if ! [[ -z $2 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
     exit -3
   fi
-  echo ""
+
   . ./interactive.sh
             Back_To_Menu
 ;;
 * )
-  echo ""
+
   Error_File "help"
   . ./help.sh
             help
