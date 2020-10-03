@@ -50,10 +50,14 @@ if ! [[ -z $4 ]]
  #   then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
   #  exit -3
   #fi
-  
-  echo $2
-  . ./strlen.sh
-            strlen $2
+  if [ $# == 2 ]
+	then
+		 . ./strlen.sh
+            strlen "$@"
+	else
+		echo echo -e "\033[31mincorrect number of arguments\033[0m" >$2
+		exit -3
+	fi
 ;;
 "log" )
   if ! [[ -z $2 ]]
