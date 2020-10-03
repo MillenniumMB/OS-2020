@@ -48,7 +48,7 @@ case $1 in
 "d")
   File_Error "strlen"
   echo -e "Write a string"
-  read "string"
+  read string
   . ./strlen.sh
             strlen "$string" "interactive"
 ;;
