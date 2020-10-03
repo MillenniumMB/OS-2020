@@ -25,14 +25,11 @@ function reverse {
     fi 
   fi
   if ! [[ -f $2 ]]
-  echo "Hello"
     then touch $2
+    echo "Good"
   fi
-  if [ "$1" == "$2" ]
-	then
-	rev $1 | tac >TMP
-	mv TMP "$2"
-  else
-	rev $1 | tac >$2
-  fi
+  tac $1 > buffer.txt
+        echo > $2
+        rev buffer.txt > $2
+        rm buffer.txt
 }
