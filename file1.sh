@@ -51,6 +51,7 @@ if ! [[ -z $4 ]]
   #  exit -3
   #fi
   
+  echo $2
   . ./strlen.sh
             strlen $2
 ;;
