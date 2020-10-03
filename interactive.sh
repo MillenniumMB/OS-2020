@@ -50,7 +50,7 @@ case $1 in
   echo -e "Write a string"
   read string
   . ./strlen.sh
-            strlen "$string"
+            strlen "$string" "interactive"
 ;;
 "e")
   File_Error "log"
