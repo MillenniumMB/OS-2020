@@ -1,7 +1,7 @@
 function strlen {
   VAR="$@"
   size=${#VAR}
-  if [$2 != "interactive"]
+  if [ "$2" != "interactive" ]
     then let size-=7
   fi  
   echo $VAR
