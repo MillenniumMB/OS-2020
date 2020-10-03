@@ -1,9 +1,10 @@
 function strlen {
-  VAR="$@"
+  if [ "$1" = "strlen" && "$2" != "interactive" ]
+    then  VAR="$2"
+  else [ "$2" = "interactive" ]
+    then VAR="$1"
+  fi 
   size=${#VAR}
-  if [ "$2" != "interactive" ]
-    then let size-=7
-  fi  
   echo $VAR
   echo -e "Len: $size"
 }
