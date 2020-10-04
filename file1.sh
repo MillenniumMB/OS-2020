@@ -54,8 +54,8 @@ if ! [[ -z $4 ]]
 	then
 		. ./strlen.sh
             strlen "$@"
-  elif [ $# != 2 ]
-	then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
+  else
+        echo -e "\033[31mincorrect number of arguments\033[0m" >$2
 	exit -3
   fi
 ;;
