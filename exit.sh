@@ -1,6 +1,7 @@
 function exit_ {
 re='^[+-]?[0-9]+$'
-if [[ $2 -gt 255 ]] || [[ $2 -lt -255 ]]; then
+if [[ $2 -gt 255 ]] || [[ $2 -lt -255 ]]
+then
   echo -e "\033[31Exit number must be in (-255, 255)\033[0m" >&2
   exit -3
 fi
