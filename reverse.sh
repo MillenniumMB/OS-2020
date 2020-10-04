@@ -24,6 +24,14 @@ function reverse {
         exit -2
     fi
     fi
+ if ! ( >> $2) 2>/dev/null ; then
+      echo -e "You haven't access to directory of outfile" >&2
+       if [[ "$3" = "interactive" ]]
+        then return -2
+    else
+        exit -2
+    fi
+    fi
   elif ! [[ -f $1 ]]
     then echo -e "\033[31mFile not found\033[0m" >&2
      if [[ "$3" = "interactive" ]]
