@@ -20,7 +20,7 @@ function reverse {
   fi
   
   if [[ -f $2 ]] && ! [[ -w $2 ]] ; then
-      echo -e "You haven't access to outfile" >&2
+      echo -e "\033[31mYou haven't access to outfile\033[0m" >&2
       if [[ "$3" = "interactive" ]]
         then return -2
     else
@@ -28,7 +28,7 @@ function reverse {
     fi
     fi
  if ! ( >> $2) 2>/dev/null ; then
-      echo -e "You haven't access to directory of outfile" >&2
+      echo -e "\033[31mYou haven't access to directory of outfile\033[0m" >&2
        if [[ "$3" = "interactive" ]]
         then return -2
     else
