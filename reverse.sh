@@ -15,6 +15,13 @@ function reverse {
         then return -2
     else
         exit -2
+    fi
+  if [[ -f $2 ]] && ! [[ -w $2 ]] ; then
+      echo -e "You haven't access to outfile" >&2
+      if [[ "$3" = "interactive" ]]
+        then return -2
+    else
+        exit -2
     fi 
   elif ! [[ -f $1 ]]
     then echo -e "\033[31mFile not found\033[0m" >&2
@@ -26,7 +33,6 @@ function reverse {
   fi
   if ! [[ -f $2 ]]
     then touch $2
-    echo "Good"
   fi
   tac $1 > buffer.txt
         echo > $2
