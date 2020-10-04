@@ -22,7 +22,8 @@ function reverse {
         then return -2
     else
         exit -2
-    fi 
+    fi
+    fi
   elif ! [[ -f $1 ]]
     then echo -e "\033[31mFile not found\033[0m" >&2
      if [[ "$3" = "interactive" ]]
