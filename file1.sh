@@ -50,7 +50,7 @@ if ! [[ -z $4 ]]
  #   then echo -e "\033[31mincorrect number of arguments\033[0m" >$2
   #  exit -3
   #fi
-  if [ $# -eq 2 ]
+  if [[ $# -eq 2 ]]
 	then
 		. ./strlen.sh
             strlen "$@"
