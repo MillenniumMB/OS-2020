@@ -6,7 +6,7 @@ function calc {
   then echo -e "\033[31mincorrect number of arguments\033[0m" >&2
   exit -3
   elif ! [[ $2 =~ ^[+-]?[0-9]+$ && $3 =~ ^[+-]?[0-9]+$ ]]
-    then echo -e "\033[31myou must enter 2 numbers after div/sum/mul/div\033[0m" >&2
+    then echo -e "\033[31myou must enter 2 numbers after div/sum/mul/sub\033[0m" >&2
     if [[ "$4" = "interactive" ]]
         then return -4
     else
