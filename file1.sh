@@ -21,7 +21,7 @@ function Error_File {
 Error_File $1
 case $1 in
 "calc" )
-if ! [[ -z $5 ]]
+if ! [[  $# -eq 4 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >&2
     exit -3
   fi
@@ -29,7 +29,7 @@ if ! [[ -z $5 ]]
             calc $2 $3 $4
 ;;
 "search" )
-if ! [[ -z $4 ]]
+if ! [[ $# -eq 3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >&2
     exit -3
   fi
@@ -37,7 +37,7 @@ if ! [[ -z $4 ]]
             search $2 $3
 ;;
 "reverse" )
-if ! [[ -z $4 ]]
+if ! [[ $# -eq 3 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >&2
     exit -3
   fi
@@ -60,7 +60,7 @@ if ! [[ -z $4 ]]
   fi
 ;;
 "log" )
-  if ! [[ -z $2 ]]
+  if ! [[  $# -eq 1 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >&2
     exit -3
   fi
@@ -70,7 +70,7 @@ if ! [[ -z $4 ]]
   
 ;;
 "exit" )
-if ! [[ -z $3 ]]
+if ! [[  $# -eq 2 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >&2
     exit -3
   fi
@@ -79,7 +79,7 @@ if ! [[ -z $3 ]]
             exit_ $2
 ;;
 "help" )
-if ! [[ -z $3 ]]
+if ! [[  $# -eq 2 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >&2
     exit -3
   fi
@@ -88,7 +88,7 @@ if ! [[ -z $3 ]]
             help $2
 ;;
 "interactive" )
-if ! [[ -z $2 ]]
+if ! [[  $# -eq 1 ]]
     then echo -e "\033[31mincorrect number of arguments\033[0m" >&2
     exit -3
   fi
