@@ -17,8 +17,8 @@ top -p $max_pid -b -n 1 > task6.txt
 
 vmSize=$(cat "task6.txt" | grep $max_pid | awk '{print $5}')
 
-echo "PID with max VmSize:$max_pid"
-echo "MEM in /proc $max_size"
-echo "MEM in top $vmSize"
+echo "pid VmSize:$max_pid"
+echo "mem in /proc $max_size"
+echo "mem in top $vmSize"
 
 rm "task6.txt"
