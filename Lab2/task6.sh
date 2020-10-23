@@ -20,5 +20,3 @@ vmSize=$(cat "task6.txt" | grep $max_pid | awk '{print $5}')
 echo "pid VmSize:$max_pid"
 echo "mem in /proc $max_size"
 echo "mem in top $vmSize"
-
-rm "task6.txt"
