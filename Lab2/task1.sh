@@ -1,6 +1,6 @@
 #!/bin/bash
 
-proc=$(ps -u user | tail -n +2 | awk '{print $1":"$4}')
+proc=$(ps -u user --no-headers| awk '{print $1":"$4}')
 count_proc=$(echo "$proc" | wc -l)
 
 
