@@ -1,24 +1,27 @@
-#!/bin/bash
+#!/usr/bin/bash
 
-file_before_temp="2_7_1.temp"
-file_after_temp="2_7_2.temp"
-
-ps aux | awk '{if ($6 != 0) print $2" "$6" "$11}' | sort -nk1 | tail -n +2 | head -n -6 > "$file_before_temp"
+for i in $(ps -A o pid,command | awk '{print $1":"$2}')
+    do
+        pid=$(echo $i | cut -d ":" -f 1)
+        cmd=$(echo $i | cut -d ":" -f 2)
+        past_bytes=$(grep -s "read_bytes" "/proc/"$pid"/io" | grep -E -o "[0-9]+")
+        if [[ -n $past_bytes ]]
+            then
+                echo "$pid $cmd $past_bytes"
+        fi
+    done > "tempVII"
 sleep 1m
-ps aux | awk '{if ($6 != 0) print $2" "$6" "$11}' | sort -nk1 | tail -n +2 | head -n -6 > "$file_after_temp"
+for i in $(ps -A o pid,command | awk '{print $1":"$2}' )
+    do
+        pid=$(echo $i | cut -d ":" -f 1)
+        cmd=$(echo $i | cut -d ":" -f 2)
+        new_bytes=$(grep -s "read_bytes" "/proc/"$pid"/io" | grep -E -o "[0-9]+")
+        past_bytes=$(cat "tempVII" | grep "$pid" | awk '{print $3}')
+        if [[ -n $past_bytes && -n $new_bytes ]]
+            then
+                d_bytes=$(($new_bytes - $past_bytes))
+                echo "$pid $cmd bytes:$(( $d_bytes ))"
+        fi
+done | sort -n -t ':' -k 3 | head -3
 
-cat "$file_before_temp" | 
-while read line
-do
-    pid=$(awk '{print $1}' <<< $line)
-    mem_before=$(awk '{print $2}' <<< $line)
-    cmd=$(awk '{print $3}' <<< $line)
-    
-    mem_after=$(cat "$file_after_temp" | awk -v id="$pid" '{if ($1 == id) print $2}')
-    mem_delta=$(echo "$mem_after-$mem_before" | bc)
-    
-    echo $pid":"$cmd":"$mem_delta
-    
-done | sort -t ":" -nk3 | head -n 3
-
-rm *.temp
+rm "tempVII"
