@@ -29,8 +29,6 @@ let res=$res*$line
 fi
 echo "$operation$line = $res"
 ;;
-echo "ERR"
-;;
 *)
 echo "ERR"
 ;;
