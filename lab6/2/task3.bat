@@ -1,2 +1,1 @@
-TIMEOUT /T 60 /NOBREAK
-start task2.bat
+SCHTASKS /Create /SC MINUTE /TN this /TR task2.bat
